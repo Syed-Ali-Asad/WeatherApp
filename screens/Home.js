@@ -32,7 +32,7 @@ export default function Home() {
 
 
       setLoading(true)
-      fetch(`http://api.weatherapi.com/v1/forecast.json?key=f94657b590f34c66969144900231308&q=${cityName}&days=5`, requestOptions)
+      fetch(`https://api.weatherapi.com/v1/forecast.json?key=f94657b590f34c66969144900231308&q=${cityName}&days=5`, requestOptions)
         .then(response => response.text())
         .then(result => {
           let temp = JSON.parse(result);
@@ -46,7 +46,7 @@ export default function Home() {
         })
         .catch(error => {console.log("Failed to get location data!")})
         .finally(()=>setLoading(false))  
-  }
+}
 
   return (
     <ImageBackground source={require('../assets/homeBackground.jpg')} style = {{flex : 1, justifyContent : 'center', alignItems : 'center'}}>

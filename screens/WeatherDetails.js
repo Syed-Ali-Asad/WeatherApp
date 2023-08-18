@@ -129,7 +129,7 @@ const extractDayName = (inputDate) => {
 
         <FlatList 
           data={todayForcast}
-          keyExtractor={(item)=> item.id}
+          keyExtractor={(item)=> item?.time_epoch?.toString()}
           horizontal
           contentContainerStyle = {{columnGap : 8, paddingLeft : WP(2), height:WP(40)}}
           renderItem={({item})=>(
@@ -139,7 +139,7 @@ const extractDayName = (inputDate) => {
         <View style = {styles.separator}/>
         <FlatList
         data={futureForcast}
-        keyExtractor={(item)=>item.id}
+        keyExtractor={(item)=>item?.date_epoch?.toString()}
         renderItem={({item})=>(
           <RenderFutureForcast item = {item} />
         )}/>
